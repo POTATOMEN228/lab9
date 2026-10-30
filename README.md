@@ -1,20 +1,20 @@
-# Lab 5 - Product Detail Screen Application
+# Lab 8 - Smart Catalog Application
 
-A modern, responsive Product Detail Screen application built with Flutter & Material 3. This application demonstrates essential Flutter layout techniques, interactive UI components, state management, and clean code structure.
+A modern, responsive Smart Catalog application built with Flutter & Material 3. This application demonstrates list/grid switching, swipe-to-delete with undo SnackBar, fake network pull-to-refresh, empty state, and modular project structure.
 
 ## 📱 Features
 
-- **Product Cover Image & Floating Bookmark Button**: Uses `Stack`, `Container`, `ClipRRect`, and `CircleAvatar` with bookmarking state toggle.
-- **Category Badges**: Custom chips utilizing `Wrap` layout to display tags dynamically.
-- **Product Information**: Displays product title, star rating badge, price, and item description using structured `Row` and `Column` widgets.
-- **Quantity Counter**: Interactive item quantity selector with state management (`setState`).
-- **Sticky Bottom Action Bar**: Pin-to-bottom "Add to Cart" button inside `SafeArea` with floating `SnackBar` user notifications.
-- **Responsive & Overflow-Safe**: Built with `SingleChildScrollView` and `Expanded` widgets to prevent `RenderFlex` overflow errors on smaller screens.
+- **List & Grid View Switch**: Toggle between 1-column list tile view and 2-column grid card view.
+- **Swipe-to-Delete**: Swipe items from right to left to remove them from the catalog.
+- **Undo SnackBar**: A floating 10-second notification appears at the bottom with an "Отменить" action to restore deleted items.
+- **Pull-to-Refresh**: Simulated network refresh that prepends new products to the catalog.
+- **Empty State**: Displays a clean empty view with a "Reset Catalog" button when all items are cleared.
+- **Modular Project Structure**: Clean separation of `models/`, `data/`, `widgets/`, and `screens/`.
 
 ## 🛠️ Built With
 
 - **Flutter**: ^3.13.2 (Dart SDK)
-- **Material Design 3**: Enhanced UI components and modern styling
+- **Material Design 3**: Modern UI components and styling
 
 ## 🚀 Getting Started
 
@@ -23,14 +23,13 @@ A modern, responsive Product Detail Screen application built with Flutter & Mate
 Ensure you have installed:
 - [Flutter SDK](https://docs.flutter.dev/get-started/install)
 - Android Studio / VS Code with Flutter extension
-- Android Emulator / Physical Device
 
-### Installation
+### Installation & Run
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/POTATOMEN228/lab5.git
-   cd lab5
+   git clone https://github.com/POTATOMEN228/lab8.git
+   cd lab8
    ```
 
 2. **Install dependencies:**
@@ -47,11 +46,16 @@ Ensure you have installed:
 
 ```
 lib/
-└── main.dart          # Main application entry point & ProductDetailScreen implementation
-assets/
-└── images/            # Asset folder for product images
+├── data/
+│   └── seed_data.dart
+├── models/
+│   └── product.dart
+├── screens/
+│   └── catalog_screen.dart
+├── widgets/
+│   ├── dismiss_background.dart
+│   ├── empty_state.dart
+│   ├── product_grid_card.dart
+│   └── product_list_tile.dart
+└── main.dart
 ```
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
