@@ -14,7 +14,7 @@ class SmartCatalogApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.indigo,
+        colorSchemeSeed: Colors.deepOrange,
       ),
       home: const CatalogScreen(),
     );
