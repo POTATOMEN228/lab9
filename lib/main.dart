@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'providers/cart_provider.dart';
+import 'screens/catalog_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const SmartCatalogApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SmartCatalogApp extends StatelessWidget {
+  const SmartCatalogApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tasker',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        useMaterial3: true,
-      ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello Tasker'),
+    return ChangeNotifierProvider(
+      create: (_) => CartProvider(),
+      child: MaterialApp(
+        title: 'Smart Catalog',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: Colors.deepOrange,
         ),
+        home: const CatalogScreen(),
       ),
     );
   }
