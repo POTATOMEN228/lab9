@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 
-import 'screens/catalog_screen.dart';
+void main() {
+  runApp(const MyApp());
+}
 
-void main() => runApp(const SmartCatalogApp());
-
-class SmartCatalogApp extends StatelessWidget {
-  const SmartCatalogApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Smart Catalog',
-      debugShowCheckedModeBanner: false,
+      title: 'Tasker',
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
-        colorSchemeSeed: Colors.deepOrange,
       ),
-      home: const CatalogScreen(),
+      home: const Scaffold(
+        body: Center(
+          child: Text('Hello Tasker'),
+        ),
+      ),
     );
   }
 }
